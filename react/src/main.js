@@ -3,7 +3,6 @@ import { render } from "react-dom";
 import { SvelteComponent } from "./SvelteComponent";
 import SvelteThing from "./SvelteThing.html";
 
-console.log("hello nicole");
 function App({ component, count }) {
   return (
     <div>
