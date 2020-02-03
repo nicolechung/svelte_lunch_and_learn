@@ -9,21 +9,17 @@ class SvelteComponent extends React.Component {
   }
 
   componentDidMount() {
-    const { component: Constructor, count } = this.props;
-    debugger;
+    const { component: Constructor, ...data } = this.props;
+
     this.instance = new Constructor({
-      target: this.container.current,
-      count
+      target: this.container.current
     });
+    this.instance.$set(data);
   }
 
   componentDidUpdate(prevProps) {
-    const { component: Constructor, count } = this.props;
-    this.container.current = null;
-    this.instance = new Constructor({
-      target: this.container.current,
-      count
-    });
+    const { component: Constructor, ...data } = this.props;
+    this.instance.$set(data);
   }
 
   componentWillUnmount() {
