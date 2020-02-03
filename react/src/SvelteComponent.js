@@ -17,13 +17,14 @@ class SvelteComponent extends React.Component {
     this.instance.$set(data);
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate() {
     const { component: Constructor, ...data } = this.props;
     this.instance.$set(data);
   }
 
   componentWillUnmount() {
-    this.instance.destroy();
+    this.instance.$$.fragment.d(1);
+    this.instance = null;
   }
 
   render() {
