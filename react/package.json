@@ -9,12 +9,15 @@
     "dev": "webpack-dev-server"
   },
   "dependencies": {
+    "core-js": "^3.6.4",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
   "devDependencies": {
-    "buble": "^0.19.8",
-    "buble-loader": "^0.5.1",
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
+    "babel-loader": "^8.0.6",
     "cross-env": "^7.0.0",
     "css-loader": "^3.4.2",
     "mini-css-extract-plugin": "^0.9.0",

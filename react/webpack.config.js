@@ -22,20 +22,40 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: {
-          loader: "buble-loader"
-        }
+        use: [
+          {
+            loader: "babel-loader",
+            options: {
+              presets: ["@babel/preset-env", "@babel/preset-react"]
+            }
+          }
+        ]
       },
       {
-        test: /\.html$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "svelte-loader",
-          options: {
-            emitCss: true,
-            hotReload: true
+        test: /\.m?js$/,
+        include: [/svelte/],
+        use: [
+          {
+            loader: "babel-loader",
+            options: {
+              presets: ["@babel/preset-env"]
+            }
           }
-        }
+        ]
+      },
+      {
+        test: /\.(html|svelte)$/,
+        exclude: /node_modules/,
+        use: [
+          "babel-loader",
+          {
+            loader: "svelte-loader",
+            options: {
+              hotReload: true,
+              emitCss: true
+            }
+          }
+        ]
       },
       {
         test: /\.css$/,
