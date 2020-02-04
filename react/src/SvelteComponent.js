@@ -1,35 +1,22 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 
-class SvelteComponent extends React.Component {
-  constructor() {
-    super();
+const SvelteComponent = props => {
+  const { component: Constructor, ...data } = props;
+  const container = useRef();
+  const instance = useRef();
 
-    this.container = React.createRef();
-    this.instance = null;
-  }
-
-  componentDidMount() {
-    const { component: Constructor, ...data } = this.props;
-
-    this.instance = new Constructor({
-      target: this.container.current
+  useEffect(() => {
+    const { component: Constructor, ...data } = props;
+    instance.current = new Constructor({
+      target: container.current
     });
-    this.instance.$set(data);
-  }
+    instance.current.$set(data);
+    return () => {
+      instance.current.$$.fragment.d(1);
+    };
+  }, [Constructor, data]);
 
-  componentDidUpdate() {
-    const { component: Constructor, ...data } = this.props;
-    this.instance.$set(data);
-  }
-
-  componentWillUnmount() {
-    this.instance.$$.fragment.d(1);
-    this.instance = null;
-  }
-
-  render() {
-    return <div ref={this.container} />;
-  }
-}
+  return <div ref={container} />;
+};
 
 export { SvelteComponent };
