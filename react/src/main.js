@@ -1,7 +1,7 @@
 import * as React from "react";
 import { render } from "react-dom";
 import { SvelteComponent } from "./SvelteComponent";
-import SvelteThing from "./SvelteThing.html";
+import SvelteThing from "./SvelteThing.svelte";
 
 function App({ component, count }) {
   return (
