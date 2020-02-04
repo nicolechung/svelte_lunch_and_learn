@@ -6,9 +6,12 @@ A basic counter built in:
 2. vuejs
 3. svelte
 
-## React
+## React and Svelte 3
 
-Embedding svelte components into React
+Embedding Svelte components into React. This is based on [react-svelte](https://github.com/Rich-Harris/react-svelte) with a few changes:
+
+1. Svelte 3 instead of Svelte 2
+2. Babel loader instead of the [buble-loader](https://www.npmjs.com/package/buble-loader). This is because moar React projects use Babel.
 
 ## Styling
 
