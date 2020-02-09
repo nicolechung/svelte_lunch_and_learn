@@ -3,6 +3,7 @@
 </script>
 
 <h1>Hello from Svelte!</h1>
+<button on:click>reset</button>
 <p>this is a prop from React: {count}</p>
 
 <style>
