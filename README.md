@@ -1,3 +1,11 @@
+## Install
+
+To install all the examples, just run the bash script:
+
+```
+./install.sh
+```
+
 ## Counter
 
 A basic counter built in:
