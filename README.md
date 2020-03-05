@@ -1,6 +1,6 @@
 ## Install
 
-To install all the examples, just run the bash script:
+To install all the examples, just run the script:
 
 ```
 ./install.sh
