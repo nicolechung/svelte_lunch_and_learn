@@ -21,11 +21,14 @@
     font-size: 20px;
     background-color: #ffffdd;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   strong {
     font-weight: 900;
+  }
+  p {
+    font-size: 24px;
   }
 </style>
 
