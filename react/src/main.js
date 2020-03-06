@@ -5,17 +5,21 @@ import SvelteThing from "./SvelteThing.svelte";
 
 function App({ component }) {
   const [count, setCount] = useState(0);
+
   const increment = () => {
     const newCount = count + 1;
     setCount(newCount);
   };
+
   const decrement = () => {
     const newCount = count - 1;
     setCount(newCount);
   };
+
   const reset = () => {
     setCount(0);
   };
+
   return (
     <div
       style={{ backgroundColor: "#ffd5e5", padding: "20px", height: "100vh" }}
