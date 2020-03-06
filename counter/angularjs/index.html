@@ -1,15 +1,49 @@
-<!doctype html>
+<!DOCTYPE html>
 <html ng-app="CounterApp">
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
     <script src="increment.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html,
+      body {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      body {
+        color: #333;
+        margin: 0;
+        padding: 20px;
+        box-sizing: border-box;
+        font-family: "Montserrat", sans-serif;
+        background-color: #81f5ff;
+      }
+
+      button {
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        border: none;
+        font-size: 24px;
+        background-color: #ffffdd;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        margin-right: 20px;
+        padding: 20px;
+      }
+    </style>
   </head>
   <body>
     <div ng-controller="CounterController as controller">
-        <h1>Count: {{count}}</h1>
-        <button ng-click="controller.increment()">+</button>
-        <button ng-click="controller.decrement()">-</button>
-        <button ng-click="controller.reset()">reset</button>
+      <h1>Count: {{count}}</h1>
+      <button ng-click="controller.increment()">+</button>
+      <button ng-click="controller.decrement()">-</button>
+      <button ng-click="controller.reset()">reset</button>
     </div>
   </body>
 </html>
